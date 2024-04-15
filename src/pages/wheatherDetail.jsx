@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Card, Spin } from "antd";
 import axios from "axios";
-import { useParams } from "react-router-dom"; // Import useParams hook
+import { useParams } from "react-router-dom";
 import { format, fromUnixTime } from "date-fns";
 
 const WeatherPage = () => {
   const { lat, lon } = useParams();
-  const [weatherData, setWeatherData] = useState(null); // Initialize weatherData as null
+  const [weatherData, setWeatherData] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [isCelsius, setIsCelsius] = useState(false);
 
@@ -40,10 +40,11 @@ const WeatherPage = () => {
   }, [lat, lon]);
 
   const fetchWeatherData = async () => {
-    const apiUrl = `http://localhost:5000/weather/city?lat=${lat}&lon=${lon}`;
+    // const apiUrl = `http://localhost:5000/weather/city?lat=${lat}&lon=${lon}`;
+    const apiUrl = `https://weather-app-api-awl8.onrender.com/weather/city?lat=${lat}&lon=${lon}`;
     try {
       const response = await axios.get(apiUrl);
-      return response.data; // Return response.data directly
+      return response.data; 
     } catch (error) {
       console.error("Error fetching weather data:", error);
       throw error;
@@ -51,7 +52,7 @@ const WeatherPage = () => {
   };
   console.log(weatherData);
 
-  // changing date formate
+  
 
   return (
     <div className="w-screen flex flex-col mx-auto justify-center items-center min-[792px]:flex-row min-[792px]:gap-8">

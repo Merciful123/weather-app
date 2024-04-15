@@ -17,7 +17,10 @@ const CitiesTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/cities");
+        // const response = await axios.get("http://localhost:5000/api/cities");
+        const response = await axios.get(
+          "https://weather-app-api-awl8.onrender.com/api/cities"
+        );
         setCities(response?.data?.results);
       } catch (error) {
         console.error("Error fetching data:", error);
