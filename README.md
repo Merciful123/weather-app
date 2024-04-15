@@ -11,6 +11,17 @@ This is a simple weather application built using React, Ant Design, Axios, and d
 - Shows weather forecast including temperature, description, humidity, wind speed, and pressure.
 
 
+
+## This weather application utilizes a backend proxy server to fetch data from external APIs and avoid CORS issues. The proxy server is responsible for forwarding requests to the external weather API and returning the data to the frontend.
+
+
+## The backend proxy server code can be found in the following repository:   https://github.com/Merciful123/weather-app-api/tree/main
+
+## Make sure to clone the backend proxy server repository and follow the installation instructions to set it up alongside the frontend application.
+
+## By integrating the backend proxy server, this application ensures smooth data retrieval and enhances the user experience.
+
+
 ## Installation
 
 1. Clone the repository:
